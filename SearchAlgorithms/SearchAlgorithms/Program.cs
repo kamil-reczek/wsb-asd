@@ -15,13 +15,12 @@ namespace SearchAlgorithms
         /// <returns>Return the first occurence of the looked element. If not found returns -1</returns>
         private static int SimpleSearch(int[] tab, int element)
         {
-            int r = -1;
             for (int i = 0; i < tab.Length; i++)
             {
-                if (tab[i] == element) r = i;
+                if (tab[i] == element) return i;
             }
 
-            return r;
+            return -1;
         }
 
         /// <summary>
