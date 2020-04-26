@@ -5,6 +5,8 @@ namespace PrimeTest
 {
     class Program
     {
+        private static BigInteger[] primes =
+            {100913, 1009139, 10091401, 100914061, 1009140611, 10091406133, 100914061337, 1009140613399};
         
         private static bool IsPrimeExample(BigInteger n)
         {
@@ -21,9 +23,20 @@ namespace PrimeTest
 
             return true;
         }
+        
+        private static bool IsPrimeDecent(BigInteger n)
+        {
+            if (n < 2) return false;
+            else if (n < 4) return true;
+            else if (n % 2 == 0) return false;
+            else
+            {
+                for (BigInteger i = 3; i * i <= n; i += 2)
+                {
+                    if (n % i == 0) return false;
+                }
+            }
 
-        private static bool IsPrimeDecent(BigInteger n) {
-            // TODO: Implement the 'decent' version of example prime test
             return true;
         }
         
@@ -32,7 +45,7 @@ namespace PrimeTest
             // Testing for small number
             for (int i = 1; i < 100; i++)
             {
-                Console.WriteLine($"Number {i} is prime: {IsPrimeExample(i)}");
+                Console.WriteLine($"Number {i} is prime: {IsPrimeDecent(i)}");
             }
             
         }
