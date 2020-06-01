@@ -1,13 +1,10 @@
-namespace SortingAlgorithms
+namespace SortingAlgorithms.algorithms.impl
 {
     public class SelectionSort : ASorting
     {
-        public SelectionSort()
-        {
-            Type = "selection";
-        }
+        // Constructor
 
-        public override void sort(int[] tab)
+        public override void Sort(int[] tab)
         {
             uint k;
             for (uint i = 0; i < (tab.Length - 1); i++)

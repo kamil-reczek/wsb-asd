@@ -1,13 +1,11 @@
-namespace SortingAlgorithms
+namespace SortingAlgorithms.algorithms.impl
 {
     public class CocktailSort : ASorting
     {
-        public CocktailSort()
-        {
-            Type = "cocktail";
-        }
 
-        public override void sort(int[] tab)
+        // Constructor
+
+        public override void Sort(int[] tab)
         {
             int left = 1, right = tab.Length - 1, k = tab.Length - 1;
             do
@@ -22,7 +20,6 @@ namespace SortingAlgorithms
                     }
 
                 left = k + 1;
-
                 for (int j = left; j <= right; j++)
                     if (tab[j - 1] > tab[j])
                     {
@@ -33,8 +30,7 @@ namespace SortingAlgorithms
                     }
 
                 right = k - 1;
-            } while
-                (left <= right);
+            } while (left <= right);
         }
     }
 }
